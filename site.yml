@@ -1,0 +1,16 @@
+---
+- name: Configurar Hosts Docker
+  hosts: all
+  user: root
+  tags: 
+    - setup
+  roles:
+    - configure_docker
+
+- name: Deploy Registry
+  hosts: registry-virtualbox
+  remote_user: vagrant
+  become: true
+  tags: registry
+  roles:
+    - role: configure_registry

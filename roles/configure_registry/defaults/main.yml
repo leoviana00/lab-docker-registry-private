@@ -1,0 +1,8 @@
+---
+htpasswd_credentials:
+  - name: admin
+    password: changeit
+  - name: registry
+    password: changeit
+  - name: leoviana
+    password: changeit
