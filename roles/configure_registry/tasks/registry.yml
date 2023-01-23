@@ -36,10 +36,10 @@
       REGISTRY_AUTH: htpasswd
       REGISTRY_AUTH_HTPASSWD_REALM: Registry Realm {{ambiente}}
       REGISTRY_AUTH_HTPASSWD_PATH: /auth/htpasswd
-      # REGISTRY_HTTP_SECRET: best-secret
-      # REGISTRY_HTTP_TLS_CERTIFICATE: /certs/registry.{{ambiente}}.infra.crt
-      # REGISTRY_HTTP_TLS_KEY: /certs/registry.{{ambiente}}.infra.key
-      # REGISTRY_HTTP_ADDR: 0.0.0.0:443
+      REGISTRY_HTTP_SECRET: best-secret
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/registry.{{ambiente}}.infra.crt
+      REGISTRY_HTTP_TLS_KEY: /certs/registry.{{ambiente}}.infra.key
+      REGISTRY_HTTP_ADDR: 0.0.0.0:443
     ports:
       - 443:443
       - 5000:5000
@@ -48,11 +48,11 @@
 
 - name: Testando Docker Registry
   uri:
-      url: http://{{ansible_host}}:5000/v2/
+      url: https://{{ansible_host}}:443/v2/
       status_code: 200
       return_content: yes
       user: registry
-      password: 2Cbn2SAJaAs3
+      password: changeit
   register: test_docker_registry
   until: test_docker_registry.content == '{}'
   retries: 5

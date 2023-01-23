@@ -20,16 +20,3 @@
     path: /home/vagrant/registry/certs/registry.{{ambiente}}.infra.crt
     privatekey_path: /home/vagrant/registry/certs/registry.{{ambiente}}.infra.key
     csr_path: /home/vagrant/registry/certs/registry.{{ambiente}}.infra.csr
-
-# - name: Mover chave dos certificados
-#   copy:
-#     src: "certs/registry.{{ambiente}}.infra.key"
-#     dest: /home/vagrant/registry/certs/registry.{{ambiente}}.infra.key
-
-# - name: Mover certificados
-#   copy:
-#     src: "certs/registry.{{ambiente}}.infra.crt"
-#     dest: /home/vagrant/registry/certs/registry.{{ambiente}}.infra.crt
-
-
-# openssl req -newkey rsa:4096 -nodes -sha256 -keyout registry.virtualbox.infra.key -x509 -days 365 -out registry.virtualbox.infra.crt -subj '/CN=192.168.10.30
