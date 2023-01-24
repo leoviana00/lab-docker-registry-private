@@ -47,14 +47,14 @@
 make init
 ```
 
-- Configuração do host
+- Subir e configurar todo ambiente de teste
 ```bash
-ansible-playbook -i inventory/virtualbox.yml site.yml --tags setup
+make setup_up
 ```
 
-- Configuração do Registry
+- Derrubar todo ambiente
 ```bash
-ansible-playbook -i inventory/virtualbox.yml site.yml --tags registry
+make setup_down
 ```
 
 ## 📄 Licença
