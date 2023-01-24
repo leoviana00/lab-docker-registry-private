@@ -23,28 +23,29 @@
 
 ## 🛠️ Etapas serem feitas
 
-1. [x] [Instalação dos pré-requisitos]
+1. [x] [Instalação dos pré-requisitos](./requirements.txt)
     - [x] Ansible
     - [x] Vagrant
     - [x] Virtualbox
-2. [x] [Criar um `Vagrantfile` para subir a vm do registry]
-3. [x] [Configurações iniciais do Ansible]
-    - [x] Criar arquivo `ansible.cfg`
-    - [x] Criar arquivo inventory
-4. [x] [Criar role para configuração inicial do Host]
-    - [x] Instalação do docker
-    - [x] Criação de novo usuário
-    - [x] Adicionar key publica ao usuário
-    - [x] Adicionar usuário ao grupo docker
-    - [x] Gerar certificados (crt, key e csr)
-5. [x] [Criar role para configuração do Registry]
-    - [x] Criar usuários e senhas para autenticação no registry
-    - [x] Subir container do docker registry
-    - [x] Mapear certificados criados para o serviço
-    - [x] Teste de acesso ao registry
-6. [x] [Criar playbook para chamar as roles]
+2. [x] [Criar um `Vagrantfile` para subir a vm do registry](./Vagrantfile)
+3. [x] Configurações iniciais do Ansible
+    - [x] [Criar arquivo `ansible.cfg`](./ansible.cfg)
+    - [x] [Criar arquivo inventory](./inventory/virtualbox.yml)
+4. [x] Criar role para configuração inicial do Host
+    - [x] [Instalação do docker](./roles/configure_docker/tasks/main.yml)
+    - [x] [Gerenciamento de usuários](./roles/configure_docker/tasks/main.yml)
+5. [x] Criar role para configuração do Registry
+    - [x] [Criar usuários e senhas para autenticação no registry](./roles/configure_registry/defaults/main.yml)
+    - [x] [Gerar certificados (crt, key e csr)](./roles/configure_registry/tasks/certificates.yml)
+    - [x] [Subir container do docker registry](./roles/configure_registry/tasks/registry.yml)
+6. [x] [Criar playbook para chamar as roles](./site.yml)
 
 ## ✨ Execução
+
+- Instalação dos pré-requisitos
+```bash
+make init
+```
 
 - Configuração do host
 ```bash
