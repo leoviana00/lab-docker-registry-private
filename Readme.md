@@ -19,7 +19,7 @@
 - Ansible
 - Vagrant
 - Virtualbox
-- Certs
+- Certs self-signed
 
 ## 🛠️ Etapas serem feitas
 
@@ -36,7 +36,7 @@
     - [x] [Gerenciamento de usuários](./roles/configure_docker/tasks/main.yml)
 5. [x] Criar role para configuração do Registry
     - [x] [Criar usuários e senhas para autenticação no registry](./roles/configure_registry/defaults/main.yml)
-    - [x] [Gerar certificados (crt, key e csr)](./roles/configure_registry/tasks/certificates.yml)
+    - [x] [Gerar certificados self-signed (crt, key e csr)](./roles/configure_registry/tasks/certificates.yml)
     - [x] [Subir container do docker registry](./roles/configure_registry/tasks/registry.yml)
 6. [x] [Criar playbook para chamar as roles](./site.yml)
 
