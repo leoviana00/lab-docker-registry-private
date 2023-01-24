@@ -59,3 +59,7 @@
   retries: 5
   delay: 2
   ignore_errors: yes
+
+- name: Imprimir mensagem
+  debug:
+    msg: "Status: {{ test_docker_registry.status  }}"
